@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scotty Simpson's Fish & Chips | Detroit's Best Since 1950</title>
+<meta name="description" content="Scotty Simpson's Fish & Chips — Detroit's best fish and chips since 1950. Fresh cod flown in daily from Halifax, Nova Scotia, secret batter recipe, hand-cut Idaho potatoes. 22200 Fenkell Ave, Detroit. Cash only.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --navy: #1B2A4A;
+  --navy-dark: #121E35;
+  --navy-light: #2A3F66;
+  --cream: #FAF6EE;
+  --warm: #F3EBD8;
+  --gold: #C9A227;
+  --gold-light: #E3C766;
+  --wood: #7B4B2A;
+  --text: #2B2B2B;
+  --muted: #6B6B6B;
+}
+body { font-family: 'Source Sans 3', sans-serif; color: var(--text); background: var(--cream); line-height: 1.6; }
+h1, h2, h3, .serif { font-family: 'Playfair Display', serif; }
+a { color: inherit; }
+
+/* Cash banner */
+.cash-banner { background: var(--gold); color: #1B2A4A; text-align: center; padding: 10px 16px; font-weight: 700; font-size: 0.95rem; letter-spacing: 0.3px; }
+.cash-banner span { font-weight: 400; }
+
+/* Nav */
+.nav { position: sticky; top: 0; z-index: 100; background: var(--navy-dark); color: #fff; box-shadow: 0 2px 12px rgba(0,0,0,0.35); }
+.nav-inner { max-width: 1200px; margin: 0 auto; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.logo { font-family: 'Playfair Display', serif; font-weight: 800; font-size: 1.3rem; letter-spacing: 0.5px; text-decoration: none; }
+.logo span { color: var(--gold-light); }
+.nav-links { display: flex; gap: 22px; flex-wrap: wrap; font-weight: 600; font-size: 0.95rem; }
+.nav-links a { text-decoration: none; opacity: 0.9; }
+.nav-links a:hover { color: var(--gold-light); }
+.nav-phone { background: var(--gold); color: #1B2A4A; padding: 8px 18px; border-radius: 50px; font-weight: 700; text-decoration: none; font-size: 0.95rem; }
+.nav-phone:hover { background: var(--gold-light); }
+
+/* Hero */
+.hero { background: linear-gradient(135deg, #121E35 0%, #1B2A4A 55%, #2A3F66 100%); color: #fff; }
+.hero-inner { max-width: 1200px; margin: 0 auto; padding: 56px 20px 64px; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 40px; align-items: center; }
+.hero-eyebrow { color: var(--gold-light); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: 0.85rem; margin-bottom: 12px; }
+.hero h1 { font-size: 3rem; line-height: 1.12; margin-bottom: 14px; }
+.hero h1 em { color: var(--gold-light); font-style: normal; }
+.hero p { font-size: 1.12rem; opacity: 0.88; margin-bottom: 22px; max-width: 560px; }
+.badges { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 26px; }
+.badge { border: 1px solid rgba(201,162,39,0.7); color: var(--gold-light); padding: 6px 14px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; }
+.hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn { display: inline-block; padding: 13px 30px; border-radius: 50px; font-weight: 700; text-decoration: none; font-size: 1rem; }
+.btn-gold { background: var(--gold); color: #1B2A4A; }
+.btn-gold:hover { background: var(--gold-light); }
+.btn-outline { border: 2px solid rgba(255,255,255,0.6); color: #fff; }
+.btn-outline:hover { border-color: var(--gold-light); color: var(--gold-light); }
+.hero-img { border-radius: 14px; overflow: hidden; box-shadow: 0 16px 40px rgba(0,0,0,0.5); border: 1px solid rgba(201,162,39,0.4); }
+.hero-img img { width: 100%; height: 100%; object-fit: cover; display: block; aspect-ratio: 4/3; }
+.hero-img figcaption { background: #000; color: #ccc; font-size: 0.8rem; text-align: center; padding: 8px; }
+
+/* Sections */
+.section { max-width: 1200px; margin: 0 auto; padding: 56px 20px; }
+.section-title { text-align: center; margin-bottom: 10px; }
+.section-title h2 { font-size: 2.1rem; color: var(--navy); }
+.section-title h2 span { color: var(--wood); }
+.section-sub { text-align: center; color: var(--muted); max-width: 640px; margin: 0 auto 36px; font-size: 1.05rem; }
+.gold-rule { width: 64px; height: 3px; background: var(--gold); margin: 14px auto 0; border-radius: 2px; }
+
+/* Story */
+.story-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 40px; align-items: center; }
+.story-grid img { width: 100%; border-radius: 14px; box-shadow: 0 8px 28px rgba(0,0,0,0.15); display: block; }
+.story-grid h2 { font-size: 2rem; margin-bottom: 14px; color: var(--navy); }
+.story-grid p { margin-bottom: 12px; color: #444; }
+.stats { display: flex; gap: 28px; margin-top: 20px; flex-wrap: wrap; }
+.stat { text-align: center; }
+.stat-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 800; color: var(--navy); line-height: 1; }
+.stat-label { font-size: 0.85rem; color: var(--muted); font-weight: 600; }
+
+/* Menu */
+.menu-section { background: var(--warm); }
+.menu-cats { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.menu-cat { background: #fff; border-radius: 14px; padding: 28px; box-shadow: 0 4px 18px rgba(0,0,0,0.06); }
+.menu-cat h3 { font-size: 1.35rem; color: var(--navy); margin-bottom: 4px; }
+.menu-cat .cat-note { color: var(--muted); font-size: 0.9rem; margin-bottom: 16px; }
+.menu-item { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 10px 0; border-bottom: 1px dotted #ddd; }
+.menu-item:last-child { border-bottom: none; }
+.menu-item-name { font-weight: 600; }
+.menu-item-name small { display: block; font-weight: 400; color: var(--muted); font-size: 0.88rem; }
+.menu-price { font-weight: 700; color: var(--navy); white-space: nowrap; font-size: 1.05rem; }
+.menu-tag { display: inline-block; background: var(--gold); color: #1B2A4A; font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 10px; margin-left: 6px; vertical-align: middle; letter-spacing: 0.5px; }
+.menu-photos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 28px; }
+.menu-photos img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 10px; display: block; }
+
+/* Reviews */
+.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.review-card { background: #fff; border-radius: 14px; padding: 24px; box-shadow: 0 4px 18px rgba(0,0,0,0.06); }
+.review-stars { color: var(--gold); font-size: 1.1rem; margin-bottom: 10px; letter-spacing: 2px; }
+.review-card p { font-style: italic; color: #444; margin-bottom: 12px; }
+.review-card .reviewer { font-weight: 700; color: var(--navy); font-size: 0.92rem; }
+.rating-summary { text-align: center; margin-bottom: 32px; }
+.rating-big { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 800; color: var(--navy); line-height: 1; }
+.rating-big span { color: var(--gold); font-size: 1.6rem; }
+
+/* Visit */
+.visit-section { background: var(--navy-dark); color: #fff; }
+.visit-section .section-title h2 { color: #fff; }
+.visit-section .section-sub { color: #bbb; }
+.visit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.visit-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 28px; }
+.visit-card h3 { color: var(--gold-light); margin-bottom: 14px; font-size: 1.3rem; }
+.visit-card p, .visit-card li { color: #ddd; margin-bottom: 6px; }
+.visit-card ul { list-style: none; }
+.visit-card a { color: var(--gold-light); font-weight: 600; }
+.hours-row { display: flex; justify-content: space-between; padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.hours-row:last-child { border-bottom: none; }
+.hours-row.today { color: var(--gold-light); font-weight: 700; }
+.status-pill { display: inline-block; padding: 5px 14px; border-radius: 50px; font-size: 0.85rem; font-weight: 700; margin-bottom: 14px; }
+.status-open { background: #2E7D32; color: #fff; }
+.status-closed { background: #B71C1C; color: #fff; }
+.cash-note { background: rgba(201,162,39,0.15); border: 1px solid rgba(201,162,39,0.5); border-radius: 10px; padding: 14px 18px; margin-top: 16px; font-size: 0.95rem; }
+.cash-note strong { color: var(--gold-light); }
+
+/* Footer */
+.footer { text-align: center; padding: 32px 20px; color: #888; font-size: 0.9rem; background: #111; }
+.footer a { color: var(--gold-light); }
+
+@media (max-width: 820px) {
+  .hero-inner, .story-grid, .menu-cats, .visit-grid { grid-template-columns: 1fr; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .menu-photos { grid-template-columns: repeat(2, 1fr); }
+  .hero h1 { font-size: 2.1rem; }
+  .nav-links { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="cash-banner">💵 CASH ONLY &nbsp;<span>We do not accept credit or debit cards. Please bring cash.</span></div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="#">Scotty Simpson's <span>Fish &amp; Chips</span></a>
+    <div class="nav-links">
+      <a href="#story">Our Story</a>
+      <a href="#menu">Menu</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit">Visit Us</a>
+    </div>
+    <a class="nav-phone" href="tel:+13135330950">(313) 533-0950</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">Brightmoor · Detroit · Since 1950</div>
+      <h1>Detroit's Best Fish &amp; Chips <em>Since 1950</em></h1>
+      <p>Fresh cod flown in daily from Halifax, Nova Scotia. Lightly battered with a secret recipe guarded since 1950. Hand-cut Idaho potatoes, homemade coleslaw, and tartar sauce made in-house.</p>
+      <div class="badges">
+        <span class="badge">Est. 1950</span>
+        <span class="badge">★ 4.6 Stars · 2,147 Reviews</span>
+        <span class="badge">Family Owned · 3 Owners in 76 Years</span>
+        <span class="badge">Cash Only</span>
+      </div>
+      <div class="hero-cta">
+        <a class="btn btn-gold" href="#menu">See the Menu</a>
+        <a class="btn btn-outline" href="#visit">Find Us</a>
+      </div>
+    </div>
+    <figure class="hero-img">
+      <img src="images/hero-fish-chips.jpg" alt="Golden battered fish and chips">
+      <figcaption>Scotty's Famous Fish &amp; Chips — three pieces of fresh cod, hand-cut fries, coleslaw &amp; tartar sauce</figcaption>
+    </figure>
+  </div>
+</header>
+
+<section class="section" id="story">
+  <div class="story-grid">
+    <img src="images/interior.jpg" alt="Classic diner interior at Scotty Simpson's">
+    <div>
+      <h2>Seventy-six years. Three owners. One recipe.</h2>
+      <p>James "Scotty" Simpson opened the doors at 22200 Fenkell in 1950, serving fish and chips to returning GIs who had developed a taste for the British staple while stationed in London.</p>
+      <p>Scotty brokered a deal with an Eastern Market vendor to fly fresh-caught cod in from Halifax, Nova Scotia every morning — packed in ice, never frozen. That relationship stands to this day.</p>
+      <p>Harry Barber started here as a busboy and dishwasher on his first day of high school in 1966. He bought the restaurant in 2002 and still runs the fryer himself. In 76 years, only three owners have guided Scotty's — and the secret batter recipe has never changed.</p>
+      <p>Named <strong>Best Fish and Chips in Detroit</strong> by Hour Detroit magazine and <strong>Best Seafood in Metro Detroit</strong> by Channel 4. Cozymeal named our fish and chips the #1 food in Detroit.</p>
+      <div class="stats">
+        <div class="stat"><div class="stat-num">76</div><div class="stat-label">Years Serving</div></div>
+        <div class="stat"><div class="stat-num">3</div><div class="stat-label">Owners Since 1950</div></div>
+        <div class="stat"><div class="stat-num">2,147</div><div class="stat-label">Google Reviews</div></div>
+        <div class="stat"><div class="stat-num">4.6★</div><div class="stat-label">Average Rating</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="menu-section" id="menu">
+  <div class="section">
+    <div class="section-title">
+      <h2>Our <span>Menu</span></h2>
+      <div class="gold-rule"></div>
+    </div>
+    <p class="section-sub">Every fish entrée comes with hand-cut Idaho potato chips, homemade coleslaw, and tangy tartar sauce made in-house. Rolls baked fresh daily from Di Maggio Italian Bakery.</p>
+    <div class="menu-cats">
+      <div class="menu-cat">
+        <h3>Fish &amp; Chips</h3>
+        <p class="cat-note">Fresh cod flown in daily from Halifax, Nova Scotia — never frozen.</p>
+        <div class="menu-item"><span class="menu-item-name">Scotty's Famous Fish &amp; Chips<span>Three pieces of fresh cod, chips, coleslaw, tartar sauce &amp; a roll</span></span><span class="menu-price">$17.00</span></div>
+        <div class="menu-item"><span class="menu-item-name">Scotty's Fish &amp; Chips<span>Two pieces of fresh cod with chips</span></span><span class="menu-price">$14.00</span></div>
+        <div class="menu-item"><span class="menu-item-name">1/2 Scotty's Fish &amp; Chips</span><span class="menu-price">$10.00</span></div>
+        <div class="menu-item"><span class="menu-item-name">Scotty's Fish Only<span>Three pieces of fresh cod, no chips</span></span><span class="menu-price">$12.00</span></div>
+        <div class="menu-item"><span class="menu-item-name">Scotty's Baked Fish<span>Baked fresh cod, lighter option</span></span><span class="menu-price">$19.00</span></div>
+        <div class="menu-item"><span class="menu-item-name">Scotty's Seasoned Grilled Fish</span><span class="menu-price">$19.00</span></div>
+        <div class="menu-item"><span class="menu-item-name">Scotty's Famous Fish Sandwich<span>On a fresh roll, with chips $12.00</span></span><span class="menu-price">$10.00</span></div>
+      </div>
+      <div class="menu-cat">
+        <h3>Seafood &amp; More</h3>
+        <p class="cat-note">Perch, shrimp, frog legs, and chicken — all fried in our secret batter.</p>
+        <div class="menu-item"><span class="menu-item-name">Lake Perch &amp; Chips<span>Crisp lake perch, a Michigan favorite</span></span><span class="menu-price">$17.00</span></div>
+        <div class="menu-item"><span class="menu-item-name">Jumbo Shrimp &amp; Chips</span><span class="menu-price">$18.50</span></div>
+        <div class="menu-item"><span class="menu-item-name">Frog Legs &amp; Chips<span>A classic throwback</span></span><span class="menu-price">$17.00</span></div>
+        <div class="menu-item"><span class="menu-item-name">Fish &amp; Shrimp &amp; Chips<span>The best of both</span></span><span class="menu-price">$19.50</span></div>
+        <div class="menu-item"><span class="menu-item-name">Chicken Strips<span>With chips</span></span><span class="menu-price">$10.00</span></div>
+        <div class="menu-item"><span class="menu-item-name">1/4 Lb. Hamburger<span>With chips</span></span><span class="menu-price">$4.00</span></div>
+        <div class="menu-item"><span class="menu-item-name">Onion Rings<span>Crunchy batter, a house favorite</span></span><span class="menu-price">$1.90</span></div>
+      </div>
+    </div>
+    <div class="menu-photos">
+      <img src="images/cod-closeup.jpg" alt="Golden battered cod">
+      <img src="images/shrimp.jpg" alt="Fried shrimp">
+      <img src="images/onion-rings.jpg" alt="Crispy onion rings">
+      <img src="images/fried-fish-plate.jpg" alt="Fried fish plate">
+    </div>
+    <p style="text-align:center; color: var(--muted); margin-top: 20px; font-size: 0.9rem;">Menu prices from our January 2026 carryout menu. Dine-in pricing may vary slightly. All prices before tax.</p>
+  </div>
+</section>
+
+<section class="section" id="reviews">
+  <div class="section-title">
+    <h2>What Detroit <span>Says</span></h2>
+    <div class="gold-rule"></div>
+  </div>
+  <div class="rating-summary">
+    <div class="rating-big">4.6 <span>★★★★★</span></div>
+    <p style="color: var(--muted);">2,147 Google reviews · One of the most reviewed restaurants in Detroit</p>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p>"The fish is lightly battered with Scotty Simpson's secret recipe and served with hand-cut fries, coleslaw, and tartar sauce — all made in-house. Each fish entrée includes three pieces of cod from Halifax, Nova Scotia."</p>
+      <div class="reviewer">— Detroit Free Press, 2026 Fish Fry Guide</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p>"The Crisp Lake Perch arrives audibly crisp, coated in a thin batter that shatters under your teeth rather than clinging to the fish like a heavy blanket. Scotty Simpson's has guarded this specific frying technique for over seventy years."</p>
+      <div class="reviewer">— Ever After in the Woods</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p>"Fresh cod flown in daily from Nova Scotia lands in a secret batter recipe that has not changed since 1950. Hundreds of people plan their entire week around the Friday fish fry."</p>
+      <div class="reviewer">— Travel Mag</div>
+    </div>
+  </div>
+</section>
+
+<section class="visit-section" id="visit">
+  <div class="section">
+    <div class="section-title">
+      <h2>Visit <span>Us</span></h2>
+      <div class="gold-rule"></div>
+    </div>
+    <p class="section-sub">Dine in or carry out. Free parking in the lot or on the street. Friday is the big rush — come early.</p>
+    <div class="visit-grid">
+      <div class="visit-card">
+        <h3>Find Us</h3>
+        <p><strong>22200 Fenkell Ave</strong><br>Detroit, MI 48223<br>Brightmoor neighborhood</p>
+        <p style="margin-top: 12px;">📞 <a href="tel:+13135330950">(313) 533-0950</a></p>
+        <p>🌐 <a href="http://www.scottysfishandchips.com/" target="_blank">scottysfishandchips.com</a></p>
+        <p style="margin-top: 12px;"><a href="https://www.google.com/maps/dir/?api=1&destination=22200+Fenkell+Ave+Detroit+MI+48223" target="_blank">Get Directions →</a></p>
+        <div class="cash-note">
+          <strong>💵 Cash Only — Please Bring Cash</strong><br>
+          We do not accept credit or debit cards. A couple of twenties usually covers two hefty plates. The ATM detour is the one thing that slows down a visit — come prepared.
+        </div>
+      </div>
+      <div class="visit-card">
+        <h3>Hours</h3>
+        <span id="status-pill" class="status-pill status-closed">Closed Now</span>
+        <ul>
+          <li class="hours-row" data-day="2"><span>Tuesday</span><span>11 AM – 7 PM</span></li>
+          <li class="hours-row" data-day="3"><span>Wednesday</span><span>11 AM – 7 PM</span></li>
+          <li class="hours-row" data-day="4"><span>Thursday</span><span>11 AM – 7 PM</span></li>
+          <li class="hours-row" data-day="5"><span>Friday</span><span>11 AM – 8 PM</span></li>
+          <li class="hours-row" data-day="6"><span>Saturday</span><span>2 PM – 8 PM</span></li>
+          <li class="hours-row" data-day="0"><span>Sunday</span><span>Closed</span></li>
+          <li class="hours-row" data-day="1"><span>Monday</span><span>Closed</span></li>
+        </ul>
+        <p style="margin-top: 14px; font-size: 0.92rem;">Friday evening is the rush — the line moves fast, but come early for the best seat. Orders land in about 10 minutes when the fryers are roaring.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>Scotty Simpson's Fish &amp; Chips · 22200 Fenkell Ave, Detroit, MI 48223 · (313) 533-0950</p>
+  <p style="margin-top: 8px;">Demo redesign by <a href="https://rishaofficial.github.io/lexis-sapphire-studio/" target="_blank">Lexis Sapphire Studio</a>. This is a concept website created to demonstrate a modern redesign. Not affiliated with Scotty Simpson's Fish &amp; Chips. Photos: Unsplash.</p>
+</footer>
+
+<script>
+// Live open/closed status
+(function() {
+  var hours = { 0: null, 1: null, 2: [11, 19], 3: [11, 19], 4: [11, 19], 5: [11, 20], 6: [14, 20] };
+  var now = new Date();
+  var day = now.getDay();
+  var h = now.getHours() + now.getMinutes() / 60;
+  var pill = document.getElementById('status-pill');
+  var today = hours[day];
+  var open = today && h >= today[0] && h < today[1];
+  if (open) {
+    pill.textContent = 'Open Now';
+    pill.className = 'status-pill status-open';
+  } else {
+    pill.textContent = 'Closed Now';
+    pill.className = 'status-pill status-closed';
+  }
+  document.querySelectorAll('.hours-row').forEach(function(row) {
+    if (parseInt(row.getAttribute('data-day'), 10) === day) row.classList.add('today');
+  });
+})();
+</script>
+</body>
+</html>
