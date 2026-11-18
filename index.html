@@ -341,6 +341,35 @@ h1, h2, h3, .oswald { font-family: 'Oswald', sans-serif; text-transform: upperca
   color: var(--muted);
 }
 
+/* Full-width photos in left column */
+.inline-photo {
+  margin: 28px 0;
+}
+.inline-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+.inline-photo figcaption {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 8px;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* Sidebar photo */
+.sidebar-photo {
+  margin: -8px -8px 14px;
+}
+.sidebar-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
 /* Bottom - press + footer */
 .press-bar {
   max-width: 1100px;
@@ -399,6 +428,11 @@ h1, h2, h3, .oswald { font-family: 'Oswald', sans-serif; text-transform: upperca
       <p>The batter recipe hasn't changed since day one. Harry Barber started here as a busboy and dishwasher in 1966. He bought the place in 2002. He's still the head cook. Still the greeter. Still the guy who'll ask how your mother is doing.</p>
       <p>Only three owners in 76 years. That's not a business. That's a family.</p>
     </div>
+
+    <figure class="inline-photo">
+      <img src="images/interior-marlins.jpg" alt="Inside Scotty Simpson's dining room with mounted sailfish on the walls">
+      <figcaption>The dining room hasn't changed much in decades. Mounted sailfish, wood paneling, Formica tables. It doesn't need to change.</figcaption>
+    </figure>
 
     <div class="timeline">
       <div class="timeline-item">
@@ -494,6 +528,11 @@ h1, h2, h3, .oswald { font-family: 'Oswald', sans-serif; text-transform: upperca
       <p class="menu-footnote">All fish dishes come with hand-cut Idaho potatoes (fries), homemade coleslaw, and tartar sauce made in-house. Rolls from Di Maggio Italian Bakery. Dine in or carryout. <strong>Cash only.</strong></p>
     </div>
 
+    <figure class="inline-photo">
+      <img src="images/menu-board.jpg" alt="The handwritten menu board at Scotty Simpson's">
+      <figcaption>The handwritten menu board. It hasn't needed updating because perfection doesn't require revisions.</figcaption>
+    </figure>
+
     <div class="photo-strip">
       <img class="tall" src="images/cod-closeup.jpg" alt="Golden battered cod">
       <img class="small" src="images/shrimp.jpg" alt="Fried shrimp">
@@ -504,6 +543,11 @@ h1, h2, h3, .oswald { font-family: 'Oswald', sans-serif; text-transform: upperca
       "The perch is phenomenal. Crispy, flaky, perfectly seasoned. Worth the drive from anywhere in Michigan."
       <cite>— EVER AFTER IN THE WOODS</cite>
     </div>
+
+    <figure class="inline-photo">
+      <img src="images/fish-chips-plate.jpg" alt="Fish and chips with coleslaw and tartar sauce at Scotty Simpson's">
+      <figcaption>The Famous Fish &amp; Chips. Golden batter, hand-cut fries, homemade coleslaw. Worth the drive from anywhere in Michigan.</figcaption>
+    </figure>
 
   </div>
 
@@ -525,6 +569,9 @@ h1, h2, h3, .oswald { font-family: 'Oswald', sans-serif; text-transform: upperca
 
     <div class="sidebar-box">
       <h3>Find Us</h3>
+      <div class="sidebar-photo">
+        <img src="images/exterior.jpg" alt="The storefront at 22200 Fenkell Ave with the yellow Scotty Simpson's sign">
+      </div>
       <p>22200 Fenkell Ave<br>Detroit, MI 48223<br>(Brightmoor)</p>
       <p style="margin-top: 12px;"><a href="https://www.google.com/maps/search/?api=1&query=Scotty+Simpson%27s+Fish+%26+Chips+22200+Fenkell+Ave+Detroit+MI+48223" target="_blank">Get Directions →</a></p>
       <p style="margin-top: 12px; opacity: 0.85;">Free parking in our lot. Dine in or carryout.</p>
@@ -561,7 +608,7 @@ h1, h2, h3, .oswald { font-family: 'Oswald', sans-serif; text-transform: upperca
   <p><strong style="color: #fff; font-family: 'Oswald', sans-serif; letter-spacing: 1px;">SCOTTY SIMPSON'S FISH &amp; CHIPS</strong></p>
   <p>22200 Fenkell Ave, Detroit, MI 48223 &nbsp;·&nbsp; <a href="tel:+13135330950">(313) 533-0950</a></p>
   <p>Tue–Thu 11–7 · Fri 11–8 · Sat 2–8 · Closed Sun &amp; Mon &nbsp;·&nbsp; Cash Only</p>
-  <p class="disclaimer">Demo redesign by Lexis Sapphire Studio. This is a concept website created to demonstrate a modern redesign. Not affiliated with Scotty Simpson's Fish &amp; Chips. Photos: Unsplash. Menu prices from January 2026.</p>
+  <p class="disclaimer">Demo redesign by Lexis Sapphire Studio. This is a concept website created to demonstrate a modern redesign. Not affiliated with Scotty Simpson's Fish &amp; Chips. Photos from customer reviews and social media. Menu prices from January 2026.</p>
 </footer>
 
 <script>
